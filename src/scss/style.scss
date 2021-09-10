@@ -1,1 +1,128 @@
 @import "~normalize.css";
+
+
+
+.wrapper{
+    min-height:100vh;
+    display:grid;
+    grid-template:minmax(auto, 123px) 1fr minmax(auto, 670px) / 1fr;
+}
+
+.header{
+    grid-row:1/2;
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    z-index:50;
+    .container{
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        margin:38px 70px;
+    }
+    // &::before{
+    //     content:'';
+    //     position:absolute;
+    //     top:0;
+    //     left:0;
+    //     width:100%;
+    //     height: 100%;
+    //     background-color: #fff;
+    // }
+}
+
+.header__logo{
+    width:138px;
+    height:28px;
+    img{
+        width:100%;
+        height:100%;
+        object-fit:contain;
+    }
+}
+
+.header__items{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.header__item{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    color: #322F2E;
+}
+.header__items li{
+    padding-right:45px;
+}
+
+.header__button{
+    color:white;
+    background-color: #C47344;
+    padding:14px 28px;
+    border-radius:25px;
+}
+.header__burger{
+    display:none;
+}
+
+@media screen and (max-width: 1280px){
+    .header{
+        .container{
+            margin:32px 50px;
+        }
+    }
+    .header__item{
+        font-size: 16px;
+    }
+    .header__items li{
+        padding-right:30px;
+    }
+    .header__button{
+        padding:12px 26px;
+    }
+}
+@media screen and (max-width: 1024px){
+    .header{
+        .container{
+            margin:28px 23px;
+        }
+    }
+    .header__logo{
+        width:100px;
+        height:20px;
+    }
+    .header__item{
+        font-size: 14px;
+    }
+    .header__items li{
+        padding-right:20px;
+    }
+    .header__button{
+        padding:10px 22px;
+    }
+}
+@media screen and (max-width: 767px){
+    .header{
+        .container{
+            margin:28px 23px;
+        }
+    }
+    .header__logo{
+        width:100px;
+        height:20px;
+    }
+    .header__item{
+        font-size: 14px;
+    }
+    .header__items li{
+        padding-right:20px;
+    }
+    .header__button{
+        padding:10px 22px;
+    }
+}

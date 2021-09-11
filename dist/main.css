@@ -747,3 +747,12 @@ template {
     width: 140px;
     height: 60px; } }
 
+.main-pict {
+  width: 100%;
+  height: 100%; }
+
+.main-pict__image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; }
+

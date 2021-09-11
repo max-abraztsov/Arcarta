@@ -7,6 +7,11 @@ import '../img/parthner2.png';
 import '../img/parthner3.png';
 import '../img/parthner4.png';
 import '../img/arrow.png';
+import '../img/illustration-big.png';
+import '../img/ill-1.png';
+import '../img/ill-2.png';
+import '../img/ill-3.png';
+import '../img/ill-4.png';
 
 
 window.addEventListener('DOMContentLoaded', () => {

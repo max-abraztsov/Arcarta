@@ -298,9 +298,9 @@
     width:20px;
     height:20px;
 }
-@media screen and (max-width: 1440px){
+@media screen and (max-width: 1600px){
     .home__body {
-        margin-top:90px;
+        margin-top:70px;
         margin-bottom:70px;
     }
 }
@@ -446,4 +446,201 @@
     width:100%;
     height:100%;
     object-fit:contain;
+}
+
+.cards {
+    width:100%;
+    display:flex;
+    justify-content:center;
+    margin:125px 0 200px 0;
+}
+.cards__items {
+    display:flex;
+    margin:0 20px;
+}
+.cards__duo:first-child{
+    margin-right:30px;
+}
+.cards__item {
+    width:500px;
+    height:500px;
+    background-color: #FFFAF2;
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.08);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    margin-bottom:30px;
+}
+.cards__item:last-child{
+    height:578px;
+}
+.cards__image {
+    width:220px;
+    height:220px;
+    margin-top:51px;
+    margin-bottom:26px;
+    img{
+        width:100%;
+        height:100%;
+        object-fit:contain;
+    }
+}
+.cards__text {
+    font-family: Roboto;
+    font-style: normal;
+    text-align: center;
+    color: #322F2E;
+    max-width:437px;
+}
+.cards__title {
+    font-weight: bold;
+    font-size: 42px;
+    line-height: 52px;
+}
+.cards__desc {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 28px;
+    margin-top:16px;
+    margin-bottom:23px;
+}
+.cards__link {
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 20px;
+    color: #000000;
+    padding:12px 38px 16px 38px;
+    border: 2px solid #E1DED9;
+    border-radius: 50px;
+}
+@media screen and (max-width: 1600px){
+    .cards{
+        margin:100px 0 150px 0;
+    }
+}
+@media screen and (max-width: 1280px){
+    .cards__item {
+        width:440px;
+        height:440px;
+        margin-bottom:25px;
+    }
+    .cards__item:last-child{
+        height:508px;
+    }
+    .cards__image {
+        width:200px;
+        height:200px;
+        margin-top:41px;
+        margin-bottom:21px;
+    }
+    .cards__text {
+        max-width:380px;
+    }
+    .cards__title {
+        font-size: 35px;
+        line-height: 45px;
+    }
+    .cards__desc {
+        margin-top:16px;
+        margin-bottom:23px;
+    }
+}
+@media screen and (max-width: 1024px){
+    .cards{
+        margin:80px 0 120px 0;
+    }
+    .cards__items {
+        margin:0 15px;
+    }
+    .cards__item {
+        width:350px;
+        height:360px;
+    }
+    .cards__item:last-child{
+        height:430px;
+    }
+    .cards__image {
+        width:180px;
+        height:180px;
+        margin-top:21px;
+        margin-bottom:18px;
+    }
+    .cards__text {
+        max-width:300px;
+    }
+    .cards__title {
+        font-size: 30px;
+        line-height: 36px;
+    }
+    .cards__desc {
+        font-size: 14px;
+        line-height: 20px;
+        margin-top:10px;
+        margin-bottom:20px;
+    }
+}
+@media screen and (max-width: 768px){
+    .cards{
+        margin:70px 0 100px 0;
+    }
+    .cards__duo:first-child{
+        margin-right:20px;
+    }
+    .cards__item {
+        width:260px;
+        height:260px;
+        margin-bottom:20px;
+    }
+    .cards__item:last-child{
+        height:280px;
+    }
+    .cards__image {
+        width:110px;
+        height:110px;
+        margin-top:15px;
+        margin-bottom:10px;
+    }
+    .cards__text {
+        max-width:280px;
+    }
+    .cards__title {
+        font-size: 20px;
+        line-height: 31px;
+    }
+    .cards__desc {
+        font-size: 12px;
+        line-height: 18px;
+    }
+    .cards__link {
+        font-size: 12px;
+        line-height: 14px;
+        padding:8px 24px 10px 24px;
+        border: 1px solid #E1DED9;
+    }
+}
+@media screen and (max-width: 570px){
+    .cards{
+        margin:60px 0 80px 0;
+    }
+    .cards__items {
+        display:flex;
+        flex-direction:column;
+    }
+    .cards__duo:first-child{
+        margin-right:0;
+    }
+    .cards__text {
+        max-width:240px;
+    }
+}
+@media screen and (max-width: 450px){
+    .cards__title {
+        font-size: 18px;
+        line-height: 24px;
+    }
+    .cards__desc {
+        font-size: 12px;
+        line-height: 16px;
+        margin-bottom:18px;
+    }
 }

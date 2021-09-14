@@ -813,3 +813,144 @@
         line-height: 22px;
     }
 }
+.reg {
+    display:flex;
+    justify-content:center;
+    width:100%;
+}
+.reg__content {
+    display:flex;
+    align-items:center;
+    background: #FAF7F3;
+    border-radius: 10px;
+    padding: 47px 66px;
+    margin:0 120px;
+    margin-bottom:120px;
+}
+.reg__image {
+    margin-right:50px;
+    width:346px;
+    height:325px;
+    img{
+        width:100%;
+        height:100%;
+        object-fit:contain;
+    }
+}
+.reg__text {
+    font-family: Roboto;
+    font-style: normal;
+}
+.reg__title {
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 54px;
+    color: #1A1918;
+}
+.reg__description {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 32px;
+    color: #322F2E;
+    max-width:544px;
+    margin:24px 0 31px 0;
+}
+#email-form{
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 32px;
+    color: rgba(0, 0, 0, 0.45);
+    box-shadow: 0px 1px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width:380px;
+    height:55px;
+    padding-left:20px;
+}
+.reg__button{
+    position:relative;
+    top:0;
+    left:0;
+}
+.reg__button::after{
+    content:'';
+    background-image: url('../img/arrow-black.png');
+    position:absolute;
+    top:-20px;
+    right:16px;
+    width: 29px;
+    height:29px;
+}
+@media screen and (max-width: 1280px){
+    .reg__content {
+        padding: 42px 55px;
+        margin:0 90px 100px 90px;
+    }
+    .reg__image {
+        margin-right:35px;
+    }
+    .reg__description {
+        margin:20px 0 25px 0;
+    }
+    #email-form{
+        width:340px;
+    }
+}
+@media screen and (max-width: 1024px){
+    .reg__content {
+        flex-direction:column;
+        text-align:center;
+        padding: 30px 40px 40px 40px;
+        margin-bottom:80px;
+    }
+    .reg__image {
+        margin-right:0;
+    }
+    .reg__title {
+        font-size: 35px;
+        line-height: 45px;
+    }
+    .reg__description {
+        font-size: 18px;
+        line-height: 26px;
+        margin:18px 0 22px 0;
+    }
+    #email-form{
+        width:320px;
+    }
+}
+@media screen and (max-width: 768px){
+    .reg__content {
+        padding: 25px 25px 40px 25px;
+        margin:0 15px 60px 15px;
+    }
+    .reg__image {
+        width:280px;
+        height:250px;
+    }
+    .reg__title {
+        font-size: 32px;
+        line-height: 42px;
+    }
+    .reg__description {
+        font-size: 16px;
+        line-height: 22px;
+        margin:12px 0 14px 0;
+    }
+    #email-form{
+        width:240px;
+    }
+}
+@media screen and (max-width: 425px){
+    .reg__content {
+        padding: 25px 15px 45px 15px;
+        margin-bottom:40px;
+    }
+    .reg__image {
+        width:260px;
+        height:235px;
+    }
+    #email-form{
+        font-size:18px;
+        width:220px;
+    }
+}

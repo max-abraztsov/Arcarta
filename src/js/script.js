@@ -12,6 +12,8 @@ import '../img/ill-1.png';
 import '../img/ill-2.png';
 import '../img/ill-3.png';
 import '../img/ill-4.png';
+import '../img/laptop.png';
+import '../img/vector-arrow.png';
 
 
 window.addEventListener('DOMContentLoaded', () => {

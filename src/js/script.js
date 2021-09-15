@@ -21,6 +21,9 @@ import '../img/people.png';
 import '../img/social1.png';
 import '../img/social2.png';
 import '../img/social3.png';
+import '../img/arr-1.png';
+
+
 
 
 

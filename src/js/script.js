@@ -15,6 +15,13 @@ import '../img/ill-4.png';
 import '../img/laptop.png';
 import '../img/vector-arrow.png';
 import '../img/little-illustration.png';
+import '../img/partnership.png';
+import '../img/approve.jpg';
+import '../img/people.png';
+import '../img/social1.png';
+import '../img/social2.png';
+import '../img/social3.png';
+
 
 
 window.addEventListener('DOMContentLoaded', () => {

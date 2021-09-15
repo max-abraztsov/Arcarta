@@ -40,4 +40,24 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
 
+    const subtitle = document.querySelectorAll('.footer__subtitle'),
+          itemsCollect = document.querySelectorAll('.footer__items');
+
+    subtitle.forEach( (item, index) => {
+        item.addEventListener('click', (e) => {
+            if(e.target.style.display != 'block'){
+                clearClasses();
+                itemsCollect[index].style.display = 'block';
+            } else {
+                clearClasses();
+            }
+        });
+    });
+
+    function clearClasses(){
+        itemsCollect.forEach( item => {
+            item.style.display = 'none';
+        });
+    }
+
 });

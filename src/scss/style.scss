@@ -685,7 +685,21 @@
     border-radius: 10px;
     z-index:2;
     box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.55);
+    transform-origin:bottom right;
+    transition: all .3s ease 0s;
 }
+@keyframes card{
+    0%{
+        transform:rotate(15deg);
+    }
+    50%{
+        transform:rotate(40deg);
+    }
+    100%{
+        transform:rotate(15deg);
+    }
+}
+
 .quiz__card:last-child {
     z-index:1;
     left:-10px;

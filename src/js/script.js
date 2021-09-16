@@ -24,9 +24,6 @@ import '../img/social3.png';
 import '../img/arr-1.png';
 
 
-
-
-
 window.addEventListener('DOMContentLoaded', () => {
 
     // Menu Burger
@@ -40,22 +37,55 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
     // Footer navigation
-    const itemsCol = document.querySelectorAll('.footer__col');
+    if (document.body.offsetWidth <= 768){
+        const itemsCol = document.querySelectorAll('.footer__col');
 
-    itemsCol.forEach( (item) => {
-        item.addEventListener('click', () => {
-            if(item.classList.contains('footer__active')){
-                clearClasses();
-            } else {
-                clearClasses();
-                item.classList.add('footer__active');
+        itemsCol.forEach( (item) => {
+            item.addEventListener('click', () => {
+                if(item.classList.contains('footer__active')){
+                    clearClasses();
+                } else {
+                    clearClasses();
+                    item.classList.add('footer__active');
+                }
+            });
+        });
+
+        function clearClasses(){
+            itemsCol.forEach( item => {
+                item.classList.remove('footer__active');
+            });
+        }
+    }
+
+    //Card swap
+    if (document.body.offsetWidth > 768){
+        const cardsParent = document.querySelector('.quiz__cards'),
+              cards = document.querySelectorAll('.quiz__card');
+
+        cardsParent.addEventListener('mouseover', event => {
+            if (event.target.classList.contains('quiz__card')){
+                cards[0].style.cssText = `
+                    transform:rotate(15deg);
+                    transition: all .3s ease 0s;
+                    left:160px;
+                    top:40px;
+                `;
+                cards[1].addEventListener('click', () => {
+                    cards[0].style.zIndex = '1';
+                    cards[1].style.zIndex = '3';
+                });
+                cards[0].addEventListener('click', () => {
+                    cards[1].style.zIndex = '1';
+                    cards[0].style.zIndex = '3';
+
+                });
             }
         });
-    });
-
-    function clearClasses(){
-        itemsCol.forEach( item => {
-            item.classList.remove('footer__active');
+        cardsParent.addEventListener('mouseleave', () => {
+            cards[0].style.cssText = `
+                transform:rotate(0deg);
+            `;
         });
     }
 

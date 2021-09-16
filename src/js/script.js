@@ -89,4 +89,40 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    //Form 
+    const form = document.querySelector('.reg__form'),
+          email = form.querySelector('input');
+
+    async function workWithData(url, method, headers, body){
+        const data = await fetch(url, {
+            method: method,
+            headers: headers,
+            body:JSON.stringify(body)
+        });
+        return await data.json();
+    }
+
+    postData(form);
+
+    function postData(form){
+        form.addEventListener('submit', event => {
+            event.preventDefault();
+            const emailData = {
+                email: email.value
+            };
+
+            workWithData('https://jsonplaceholder.typicode.com/users',
+            'POST',
+            {'Content-Type':'application/json'},
+            emailData)
+            .then(data => {
+                console.log(data);
+            }).catch(() => {
+                console.error('Error');
+            }).finally(() => {
+                form.reset();
+            })
+        });
+    }
+
 });

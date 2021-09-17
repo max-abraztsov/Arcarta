@@ -449,7 +449,12 @@ template {
   font-weight: bold;
   font-size: 16px;
   line-height: 20px;
-  color: #322F2E; }
+  color: #322F2E;
+  transition: 0.3s; }
+
+.header__item:hover {
+  color: #f87144;
+  transition: 0.3s; }
 
 .header__items li {
   padding-right: 45px; }
@@ -801,7 +806,7 @@ template {
 .cards__duo:first-child {
   margin-right: 30px;
   opacity: 0;
-  transform: translate(-120%, 0px);
+  transform: translate(-30%, 0px);
   transition: all .8s ease .1s; }
 
 .cards__duo:first-child._active {
@@ -811,7 +816,7 @@ template {
 
 .cards__duo:last-child {
   opacity: 0;
-  transform: translate(120%, 0px);
+  transform: translate(30%, 0px);
   transition: all .8s ease .1s; }
 
 .cards__duo:last-child._active {
@@ -927,8 +932,8 @@ template {
   .cards__duo:first-child {
     margin-right: 20px; }
   .cards__item {
-    width: 260px;
-    height: 260px;
+    width: 240px;
+    height: 240px;
     margin-bottom: 20px; }
   .cards__item:last-child {
     height: 280px; }
@@ -943,6 +948,7 @@ template {
     font-size: 20px;
     line-height: 31px; }
   .cards__desc {
+    max-width: 220px;
     font-size: 12px;
     line-height: 18px; }
   .cards__link {
@@ -970,6 +976,11 @@ template {
     font-size: 12px;
     line-height: 16px;
     margin-bottom: 18px; } }
+
+@media screen and (max-width: 400px) {
+  .cards__item {
+    width: 210px;
+    height: 240px; } }
 
 .quiz {
   width: 100%;

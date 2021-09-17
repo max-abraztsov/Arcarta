@@ -1,4 +1,4 @@
-'use strict';
+
 import '../scss/zero.scss';
 import '../css/style.css';
 import '../scss/style.scss';
@@ -37,11 +37,42 @@ window.addEventListener('DOMContentLoaded', () => {
         document.body.classList.toggle('lock');
     });
 
+    //Scroll to block
+    const gotoLinks = document.querySelectorAll('.header__item[data-goto]')
+    if (gotoLinks.length > 0){
+        gotoLinks.forEach( item => {
+            item.addEventListener('click', scrollOnItem );
+        });
+
+        function scrollOnItem(e){
+            e.preventDefault();
+            const link = e.target;
+            if (link.dataset.goto && document.querySelector(link.dataset.goto)){
+                const itemScrollTo = document.querySelector(link.dataset.goto);
+                const gotoBlockValue = itemScrollTo.getBoundingClientRect().top + pageYOffset - document.querySelector('.header').offsetHeight;
+                
+                headerMenu.classList.remove('active');
+               
+                window.scrollTo({
+                    top: gotoBlockValue,
+                    behavior: "smooth"
+                });
+               
+                
+                window.scrollTo({
+                    top: gotoBlockValue,
+                    behavior: "smooth"
+                });
+            }
+
+        }
+    }
+
     // Footer navigation
     if (document.body.offsetWidth <= 768){
         const itemsCol = document.querySelectorAll('.footer__col');
 
-        itemsCol.forEach( (item) => {
+        itemsCol.forEach( item => {
             item.addEventListener('click', () => {
                 if(item.classList.contains('footer__active')){
                     clearClasses();

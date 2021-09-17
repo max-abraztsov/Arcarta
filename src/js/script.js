@@ -1,3 +1,4 @@
+'use strict';
 import '../scss/zero.scss';
 import '../css/style.css';
 import '../scss/style.scss';
@@ -125,12 +126,13 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Animation
+    // Animation on scroll
     const animItems = document.querySelectorAll('._anim-item');
 
     if (animItems.length > 0){
         window.addEventListener('scroll', animOnScroll);
-        function animOnScroll(params = 0){
+        
+        function animOnScroll(){
             for (let i = 0; i < animItems.length; i++){
                 const animItem = animItems[i];
                 const animItemHeight = animItem.offsetHeight;
@@ -146,17 +148,20 @@ window.addEventListener('DOMContentLoaded', () => {
                 if((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset + animItemHeight)){
                     animItem.classList.add('_active');
                 }else{
-                    animItem.classList.remove('_active');
+                    if(!animItem.classList.contains('_anim-no-hide')){
+                        animItem.classList.remove('_active');
+                    }
                 }
 
             }
         }
-    }
-    function offset(elem){
-        const rect = elem.getBoundingClientRect(),
-            scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
-            scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        return { top: rect.top + scrollTop, left:rect.left + scrollLeft }
-    }
+        animOnScroll();
 
+        function offset(elem){
+            const rect = elem.getBoundingClientRect(),
+                scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+                scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            return { top: rect.top + scrollTop, left:rect.left + scrollLeft }
+        }
+    }
 });

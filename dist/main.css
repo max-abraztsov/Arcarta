@@ -596,7 +596,8 @@ template {
   color: #322F2E;
   margin: 11px 0 28px 0;
   opacity: 0;
-  transform: translate(0px, 120%); }
+  transform: translate(0px, 120%);
+  transition: all .8s ease 0s; }
 
 .home__title._active {
   opacity: 1;
@@ -610,7 +611,15 @@ template {
   font-weight: 500;
   font-size: 21px;
   line-height: 33px;
-  color: #322F2E; }
+  color: #322F2E;
+  opacity: 0;
+  transform: translate(0px, 120%);
+  transition: all .8s ease .3s; }
+
+.home__description._active {
+  opacity: 1;
+  transform: translate(0px, 0px);
+  transition: all .8s ease .3s; }
 
 .home__button {
   margin: 20px 0 52px 0;
@@ -622,7 +631,15 @@ template {
   font-weight: bold;
   font-size: 16px;
   line-height: 20px;
-  color: #FFFFFF; }
+  color: #FFFFFF;
+  opacity: 0;
+  transform: translate(0px, 120%);
+  transition: all .8s ease .6s; }
+
+.home__button._active {
+  opacity: 1;
+  transform: translate(0px, 0px);
+  transition: all .8s ease .6s; }
 
 .home__brand {
   width: 225px;
@@ -782,7 +799,25 @@ template {
   margin: 0 20px; }
 
 .cards__duo:first-child {
-  margin-right: 30px; }
+  margin-right: 30px;
+  opacity: 0;
+  transform: translate(-120%, 0px);
+  transition: all .8s ease .1s; }
+
+.cards__duo:first-child._active {
+  opacity: 1;
+  transform: translate(0px, 0px);
+  transition: all .8s ease .1s; }
+
+.cards__duo:last-child {
+  opacity: 0;
+  transform: translate(120%, 0px);
+  transition: all .8s ease .1s; }
+
+.cards__duo:last-child._active {
+  opacity: 1;
+  transform: translate(0px, 0px);
+  transition: all .8s ease .1s; }
 
 .cards__item {
   width: 500px;

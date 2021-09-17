@@ -594,7 +594,14 @@ template {
   font-size: 110px;
   line-height: 119px;
   color: #322F2E;
-  margin: 11px 0 28px 0; }
+  margin: 11px 0 28px 0;
+  opacity: 0;
+  transform: translate(0px, 120%); }
+
+.home__title._active {
+  opacity: 1;
+  transform: translate(0px, 0px);
+  transition: all .8s ease 0s; }
 
 .home__description {
   max-width: 524px;

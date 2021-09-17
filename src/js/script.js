@@ -30,7 +30,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const headerBurger = document.querySelector('.header__burger'),
           headerMenu = document.querySelector('.header__menu');
 
-    headerBurger.addEventListener('click', (e) => {
+    headerBurger.addEventListener('click', () => {
         headerBurger.classList.toggle('active');
         headerMenu.classList.toggle('active');
         document.body.classList.toggle('lock');
@@ -123,6 +123,40 @@ window.addEventListener('DOMContentLoaded', () => {
                 form.reset();
             })
         });
+    }
+
+    // Animation
+    const animItems = document.querySelectorAll('._anim-item');
+
+    if (animItems.length > 0){
+        window.addEventListener('scroll', animOnScroll);
+        function animOnScroll(params = 0){
+            for (let i = 0; i < animItems.length; i++){
+                const animItem = animItems[i];
+                const animItemHeight = animItem.offsetHeight;
+                const animItemOffset = offset(animItem).top;
+                const animStart = 4;
+
+                let animItemPoint = window.innerHeight - animItemHeight / animStart;
+
+                if (animItemHeight > window.innerHeight){
+                    animItemPoint = window.innerHeight - window.innerHeight / animStart;
+                }
+
+                if((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset + animItemHeight)){
+                    animItem.classList.add('_active');
+                }else{
+                    animItem.classList.remove('_active');
+                }
+
+            }
+        }
+    }
+    function offset(elem){
+        const rect = elem.getBoundingClientRect(),
+            scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+            scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        return { top: rect.top + scrollTop, left:rect.left + scrollLeft }
     }
 
 });
